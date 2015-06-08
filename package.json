@@ -1,0 +1,17 @@
+{
+  "name": "ka-rss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.27",
+    "feedparser": "^1.1.2",
+    "mongoose": "^4.0.5",
+    "parse-rss": "^1.0.3"
+  }
+}
