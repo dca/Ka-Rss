@@ -1,6 +1,6 @@
 
 
-import * as models from './models.js';
+import * as models from '../models.js';
 import collector from './collector.js';
 
 
@@ -17,7 +17,14 @@ async function doCollector() {
   });
 }
 
-setInterval( doCollector, 1000 * 60);
 
-doCollector();
+console.log('init timer');
+
+export default function () {
+  console.log('start timer');
+
+  doCollector();
+
+  setInterval( doCollector, 1000 * 60);
+}
 
