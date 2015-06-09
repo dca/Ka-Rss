@@ -5,11 +5,23 @@
   "main": "index.js",
   "scripts": {
     "dev": "babel-node --stage 0 src/server.js",
+    "build": "browserify -t reactify client/App.jsx > build/client.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ]
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babelify": "^6.1.2",
     "bluebird": "^2.9.27",
     "debug": "^2.2.0",
     "feedparser": "^1.1.2",
@@ -23,6 +35,8 @@
     "koa-router": "^5.1.2",
     "koa-static-cache": "^3.1.1",
     "mongoose": "^4.0.5",
-    "parse-rss": "^1.0.3"
+    "parse-rss": "^1.0.3",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1"
   }
 }
