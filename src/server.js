@@ -78,4 +78,7 @@ app.use(router.routes());
 app.listen(3123);
 console.log('Application started on port 3123');
 
+import timer from './services/timer.js'
+
+timer();
 

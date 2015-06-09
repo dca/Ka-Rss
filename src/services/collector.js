@@ -1,7 +1,7 @@
 
 
 import parser from './parser';
-import * as models from './models.js';
+import * as models from '../models.js';
 
 async function processEntity(entity) {
   if (!entity.title || !entity.link) {
