@@ -25,6 +25,7 @@
     "bluebird": "^2.9.27",
     "debug": "^2.2.0",
     "feedparser": "^1.1.2",
+    "iso": "^4.1.0",
     "koa": "^0.21.0",
     "koa-body": "^1.2.1",
     "koa-helmet": "^0.1.0",

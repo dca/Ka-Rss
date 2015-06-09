@@ -5,8 +5,11 @@ var FavoritesStore = require('./FavoritesStore');
 
 class LocationStore {
   constructor() {
+    console.log('create a new LocationStore');
     this.locations = [];
     this.errorMessage = null;
+
+    this.numForCount = 0;
 
     this.bindListeners({
       handleUpdateLocations: LocationActions.UPDATE_LOCATIONS,
@@ -28,6 +31,7 @@ class LocationStore {
     // reset the array while we're fetching new locations so React can
     // be smart and render a spinner for us since the data is empty.
     this.locations = [];
+    console.log('handleFetchLocations', ++this.numForCount );
   }
 
   handleLocationsFailed(errorMessage) {

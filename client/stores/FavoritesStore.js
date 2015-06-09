@@ -3,6 +3,7 @@ var LocationActions = require('../actions/LocationActions');
 
 class FavoritesStore {
   constructor() {
+    console.log('create a new FavoritesStore');
     this.locations = [];
 
     this.bindListeners({
