@@ -4,10 +4,12 @@ var LocationStore = require('../stores/LocationStore');
 var FavoritesStore = require('../stores/FavoritesStore');
 var LocationActions = require('../actions/LocationActions');
 
-var mui = require('material-ui');
+var mui = require('matevirial-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
-var AppBar = mui.AppBar;
-var LeftNav = mui.LeftNav;
+//var AppBar = mui.AppBar;
+//var LeftNav = mui.LeftNav;
+
+import AppBar, LeftNav from 'matevirial-ui';
 
 var Locations = React.createClass({
 

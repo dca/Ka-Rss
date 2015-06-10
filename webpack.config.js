@@ -26,7 +26,7 @@ module.exports = {
       }
     ],
 
-    noParse: ['react']
+    //noParse: ['react']
   },
 
   resolve: {
