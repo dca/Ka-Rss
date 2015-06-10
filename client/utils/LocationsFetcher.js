@@ -11,7 +11,7 @@ var mockData = [
   { id: 9, name: 'Moscow' },
   { id: 10, name: 'Mumbai' },
   { id: 11, name: 'Paris' },
-  { id: 12, name: 'San Francisco' }
+  { id: 12, name: 'San Francisco QQ' }
 ];
 
 var LocationsFetcher = {
