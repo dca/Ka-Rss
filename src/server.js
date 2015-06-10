@@ -15,6 +15,7 @@ import responseTime from 'koa-response-time';
 import staticCache from 'koa-static-cache';
 import qs from 'koa-qs';
 import koaBody from 'koa-body';
+import cors from 'koa-cors';
 
 //import router from './router';
 //import config from './config/init';
@@ -29,6 +30,8 @@ const env = process.env.NODE_ENV || 'development';
 app.use(responseTime());
 app.use(logger());
 
+
+app.use(cors());
 // various security headers
 app.use(helmet.defaults());
 

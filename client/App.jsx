@@ -1,5 +1,9 @@
 var React = require('react');
+var injectTapEventPlugin = require('react-tap-event-plugin');
+injectTapEventPlugin();
+
 var Locations = require('./components/Locations.jsx');
+var MainApp = require('./components/MainApp.jsx');
 
 
 //var Iso = require('iso');
@@ -15,7 +19,7 @@ Iso.bootstrap(function (state, meta, container) {
 
 
 React.render(
-  <Locations />,
+  <MainApp />,
   document.getElementById('ReactApp')
 );
 
