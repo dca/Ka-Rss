@@ -4,15 +4,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "babel-node --stage 0 src/server.js",
+    "server": "babel-node --stage 0 src/server.js",
+    "build": "browserify client/App.jsx > build/client.js",
+    "dev": "webpack -d && webpack-dev-server --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "stage": 0
+        }
+      ]
+    ]
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "alt": "~0.16.10",
+    "babel": "~5.5.6",
+    "babel-core": "~5.5.6",
+    "babel-loader": "~5.1.4",
+    "babelify": "^6.1.2",
     "bluebird": "^2.9.27",
     "debug": "^2.2.0",
     "feedparser": "^1.1.2",
+    "iso": "^4.1.0",
+    "isomorphic-fetch": "^2.1.0",
     "koa": "^0.21.0",
     "koa-body": "^1.2.1",
     "koa-helmet": "^0.1.0",
@@ -22,7 +41,14 @@
     "koa-response-time": "^1.0.2",
     "koa-router": "^5.1.2",
     "koa-static-cache": "^3.1.1",
+    "material-ui": "^0.9.0",
     "mongoose": "^4.0.5",
-    "parse-rss": "^1.0.3"
+    "node-libs-browser": "~0.5.2",
+    "parse-rss": "^1.0.3",
+    "react": "^0.13.3",
+    "react-tap-event-plugin": "^0.1.7",
+    "reactify": "^1.1.1",
+    "webpack": "~1.9.10",
+    "webpack-dev-server": "~1.9.0"
   }
 }
