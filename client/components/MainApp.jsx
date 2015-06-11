@@ -4,14 +4,17 @@ var LocationStore = require('../stores/LocationStore');
 var FavoritesStore = require('../stores/FavoritesStore');
 var LocationActions = require('../actions/LocationActions');
 
-var mui = require('matevirial-ui');
+
+var mui = require('material-ui');
 var ThemeManager = new mui.Styles.ThemeManager();
-//var AppBar = mui.AppBar;
-//var LeftNav = mui.LeftNav;
+var AppBar = mui.AppBar;
+var LeftNav = mui.LeftNav;
 
-import AppBar, LeftNav from 'matevirial-ui';
+//import {AppBar, LeftNav, Styles} from 'material-ui';
+//let ThemeManager = new Styles.ThemeManager();
 
-var Locations = React.createClass({
+
+var MainApp = React.createClass({
 
   getInitialState() {
     return LocationStore.getState();
@@ -49,6 +52,7 @@ var Locations = React.createClass({
   },
 
   render() {
+
     if (this.state.errorMessage) {
       return (
         <div>Something is wrong :{this.state.errorMessage}</div>
@@ -63,7 +67,12 @@ var Locations = React.createClass({
       )
     }
 
-    let menuItems = [];
+    let menuItems = [
+      { payload: '1', text: 'CCCB!', iconClassName: 'muidocs-icon-communication-phone', number: '10' },
+      { payload: '2', text: 'Voicemail', iconClassName: 'muidocs-icon-communication-voicemail',  number: '5' },
+      { payload: '3', text: 'Starred', iconClassName: 'muidocs-icon-action-stars', number: '3' },
+      { payload: '4', text: 'Shared', iconClassName: 'muidocs-icon-action-thumb-up',  number: '12' }
+    ];
 
     return (
       <div>
@@ -87,5 +96,5 @@ var Locations = React.createClass({
   }
 });
 
-module.exports = Locations;
+module.exports = MainApp;
 

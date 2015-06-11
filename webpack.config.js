@@ -6,7 +6,10 @@ module.exports = {
 
   // 將來生成 bundle.js
   entry: {
-    bundle: [ "./client/app.jsx"]
+    bundle: [
+      "webpack/hot/dev-server",
+      "./client/app.jsx"
+    ]
   },
 
   // 主要是啟動 babel-loader
@@ -15,7 +18,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        exclude: [ /node_modules/, /vendor/ ],
+        exclude: [ /node_modules/ ],
         loaders: [ 'babel-loader?stage=0' ],
         include: path.join(__dirname, 'client')
       },
@@ -26,7 +29,7 @@ module.exports = {
       }
     ],
 
-    //noParse: ['react']
+    noParse: ['react', 'meterial-ui']
   },
 
   resolve: {
@@ -54,6 +57,8 @@ module.exports = {
   // 有加這段的話，平常在 cli 跑 $ webpack-dev-server 時就不需另外加 --content-base .build/ 這參數
   devServer: {
 
+    hot: true,
+
     // 要寫絕對路徑
     contentBase: path.resolve(__dirname, "./build"),
 
@@ -66,8 +71,11 @@ module.exports = {
     // 等於是 cli 時有無下 --inline 參數
     inline: true,
 
+
+    port: 8000,
+
     // webpack-dev-middleware options
-    quiet: true,  // 設為 true 即不會顯示太多 debug 訊息，讓 console 乾淨一點
+    quiet: false,  // 設為 true 即不會顯示太多 debug 訊息，讓 console 乾淨一點
     noInfo: true,
     lazy: false,  // false 是啟動 watch mode，有變化即自動編譯
     stats: { colors: true, cached: false, cachedAssets: false },

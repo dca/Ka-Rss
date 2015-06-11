@@ -9,8 +9,6 @@ class LocationStore {
     this.locations = [];
     this.errorMessage = null;
 
-    this.numForCount = 0;
-
     this.bindListeners({
       handleUpdateLocations: LocationActions.UPDATE_LOCATIONS,
       handleFetchLocations: LocationActions.FETCH_LOCATIONS,
