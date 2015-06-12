@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "babel-node --stage 0 src/server.js",
+    "server": "babel-node --stage 0 --harmony src/start.js",
     "build": "browserify client/App.jsx > build/client.js",
     "dev": "webpack -d && webpack-dev-server --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
